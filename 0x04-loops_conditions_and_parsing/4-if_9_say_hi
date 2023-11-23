@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#print hi in the 9th statment
+i=10
+while [ $i -gt 0 ]
+do
+if [ $i -eq 2 ]
+then
+echo "hi"
+i=$((i - 1))
+fi
+echo "Best School"
+i=$((i - 1))
+done
