@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#display bash pid easly
+pgrep -l bash
