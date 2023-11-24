@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#killall
+kill -9 7-highlander
