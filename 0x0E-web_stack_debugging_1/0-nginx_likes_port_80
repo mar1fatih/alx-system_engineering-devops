@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # debugging some web stack issues
 rm /etc/nginx/sites-enabled/default
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
