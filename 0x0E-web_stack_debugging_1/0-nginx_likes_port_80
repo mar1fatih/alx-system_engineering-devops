@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 # debugging some web stack issues
+
+if ! command -v nginx &>/dev/null; then
+    sudo apt update
+    sudo apt install -y nginx
+    service nginx start
+    exit 1
+fi
+
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+if ! grep -q 'listen\s*80;' /etc/nginx/sites-available/default; then
+    sed -i 's/\(listen\s*\)80\s*;/\180;/' /etc/nginx/sites-available/default
+fi
 service nginx restart
