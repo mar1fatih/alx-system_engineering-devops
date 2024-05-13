@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# changing user to nginx and listening port to 8080
+
+sudo sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+echo "restarting..."
+sudo service nginx restart 
