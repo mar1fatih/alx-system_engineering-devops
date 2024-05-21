@@ -28,5 +28,5 @@ if __name__ == '__main__':
         _dict[user_id].append({"task": title,
                                "completed": completed,
                                "username": user_name})
-    with open('USER_ID.json', 'w') as js_file:
+    with open('{}.json'.format(user_id), 'w') as js_file:
         json.dump(_dict, js_file)
