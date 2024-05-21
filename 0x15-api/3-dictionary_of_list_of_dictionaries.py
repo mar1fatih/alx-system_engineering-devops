@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     _url = "https://jsonplaceholder.typicode.com/users"
     users = requests.get(_url).json()
-    
+
     for usr in users:
         user_id = usr.get('id')
         user_name = usr.get('username')
