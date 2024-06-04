@@ -1,19 +1,18 @@
 #!/usr/bin/python3
-"""
-queries subscribers.
-"""
+'''
+module queries and returns the number of subscribers
+'''
 
 import requests
 
 
-def number_of_subscribers(subreddit):
-    """return the total number of subscribers."""
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {"User-Agent": "Mozilla/5.0"}
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-        data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
-    else:
+def number_of_subscribers(subscribers):
+    '''function that queries and returns subscribers number'''
+    headers = {'User-agent': 'test'}
+    res = requests.get("https://www.reddit.com/r/{}/about.json"
+                       .format(subscribers), headers=headers)
+    try:
+        subs = res.json()['data']['subscribers']
+    except Exception:
         return 0
+    return subs
